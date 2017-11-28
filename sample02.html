@@ -1,0 +1,30 @@
+<html> 
+<body> 
+
+<video id="videoId" width="320" height="240">
+  <source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/nature.mp4" type="video/mp4">
+  <!--<source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/nature.ogg" type="video/ogg">-->
+  <source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/wonders.mp4" type="video/mp4">
+  <!--<source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/wonders.ogg" type="video/ogg">-->
+  <source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/BigBuck.mp4" type="video/mp4">
+  <!--<source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/BigBuck.ogg" type="video/ogg">-->
+</video>
+
+<script> 
+
+var myVideo = document.getElementById('videoId');
+if (typeof myVideo.loop == 'boolean') { // loop supported
+  myVideo.loop = true;
+} else { // loop property not supported
+  myVideo.addEventListener('ended', function () {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+}
+
+myVideo.play();
+
+</script> 
+
+</body> 
+</html>
