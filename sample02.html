@@ -1,30 +1,25 @@
 <html> 
-<body> 
+    <body>
+        <video src="http://www.w3schools.com/html/mov_bbb.mp4" id="myvideo" width="320" height="240" control autoplay>
+        </video>
 
-<video id="videoId" width="320" height="240">
-  <source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/nature.mp4" type="video/mp4">
-  <!--<source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/nature.ogg" type="video/ogg">-->
-  <source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/wonders.mp4" type="video/mp4">
-  <!--<source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/wonders.ogg" type="video/ogg">-->
-  <source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/BigBuck.mp4" type="video/mp4">
-  <!--<source src="http://courses.cs.cityu.edu.hk/cs2204/example/video/BigBuck.ogg" type="video/ogg">-->
-</video>
+        <script>
+            var myvid = document.getElementById('myvideo');
+            var myvids = [
+            "http://www.w3schools.com/html/mov_bbb.mp4", 
+            "http://www.w3schools.com/html/movie.mp4",
+            "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
+            ];
+            var activeVideo = 0;
 
-<script> 
+            myvid.addEventListener('ended', function(e) {
+            // update the new active video index
+            activeVideo = (++activeVideo) % myvids.length;
 
-var myVideo = document.getElementById('videoId');
-if (typeof myVideo.loop == 'boolean') { // loop supported
-  myVideo.loop = true;
-} else { // loop property not supported
-  myVideo.addEventListener('ended', function () {
-    this.currentTime = 0;
-    this.play();
-  }, false);
-}
-
-myVideo.play();
-
-</script> 
-
-</body> 
+            // update the video source and play
+            myvid.src = myvids[activeVideo];
+            myvid.play();
+            });
+        </script>
+    </body>
 </html>
