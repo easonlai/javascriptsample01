@@ -45,6 +45,7 @@ Adding Table Row
             </td>
               </tr>
         </table>
+        <p id="myDivaddrowmsg"></p>
         <input type="button" value="增加" onclick="add_new_data()">
 </form>
 
@@ -73,6 +74,13 @@ Adding Table Row
     Td = Tr.insertCell(Tr.cells.length);
     Td.innerHTML='<input name="content[]" type="text" size="12">';
     //這樣就好囉 記得td數目要一樣 不然會亂掉~
+    add_new_data_text()
+  }
+
+  function add_new_data_text() {
+    var addrowmsg = '1 row added <br>';
+    var elemaddrowmsg = document.getElementById('myDivaddrowmsg');
+    elemaddrowmsg.innerHTML = addrowmsg;
   }
 
 </script>
