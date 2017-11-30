@@ -1,0 +1,36 @@
+<html>
+<head>
+<!-- Include JS File Here -->
+<script src="http://courses.cs.cityu.edu.hk/cs2204/cs2204cw3.js"></script>
+</head>
+<body>
+
+<form action="#" method="post" name="form_name" id="form_id" class="form_class" >
+        <label>Date :</label>
+        <input type="text" name="date" id="date" />
+        <label>Time :</label>
+        <input type="text" name="time" id="time" />
+        <label>No of Guest :</label>
+        <input type="text" name="no" id="no" />
+        <input type="button" name="submit_id" id="btn_id" value="Submit" onclick="reserve(document.getElementById('date').value,document.getElementById('time').value,document.getElementById('no').value)" />
+</form>
+
+<br><br><br><br><br>
+
+Adding 'a' and 'b'
+<br>
+
+  a: <input type="number" name="a" id="a"><br>
+  b: <input type="number" name="b" id="b"><br>
+  <button onclick="add(document.getElementById('a').value,document.getElementById('b').value)">Add</button>
+
+<script>
+  function add(a,b) {
+    var sum = parseInt(a) + parseInt(b);
+    alert(sum);
+  }
+</script>
+
+
+</body>
+</html>
